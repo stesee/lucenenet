@@ -45,6 +45,12 @@
     <LuceneNetCodeAnalysisVBAssemblyFile>$(LuceneNetDotNetDir)\Lucene.Net.CodeAnalysis.VisualBasic\bin\$(Configuration)\netstandard1.3\*.dll</LuceneNetCodeAnalysisVBAssemblyFile>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
+	<EnableNETAnalyzers>true</EnableNETAnalyzers>
+	<AnalysisMode>AllEnabledByDefault</AnalysisMode>
+	<AnalysisLevel>latest</AnalysisLevel>
+  </PropertyGroup>
+
   <ItemGroup Label="NuGet Package Files">
     <!-- Since including a readme in the NuGet package makes the info read-only, we are excluding it for now -->
     <!--<None Include="readme-nuget.md" Pack="true" PackagePath="\readme.md" />-->
